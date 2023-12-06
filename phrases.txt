@@ -1,0 +1,5 @@
+Les sanglots longs Des violons De l'automne Blessent mon coeur D'une langueur Monotone.
+La vie est belle.
+Programmation en C++.
+Chiffrement de César avec décalage de 5.
+Exemple de phrase à encoder.
