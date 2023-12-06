@@ -7,7 +7,7 @@
 
 int main() {
     // BASICENCRYPT //
-    std::cout << "BASICENCRYPT" << std::endl;
+    std::cout << ">> BASICENCRYPT" << std::endl << std::endl;
     BasicEncrypt basicEncrypt;
 
     std::string message = "Les sanglots longs Des violons De l'automne Blessent mon coeur D'une langueur Monotone.";
@@ -19,10 +19,10 @@ int main() {
 
     // Déchiffrement
     std::string decodedText = basicEncrypt.decode(cipherText);
-    std::cout << "decrypt : " << decodedText << std::endl;
+    std::cout << "decrypt : " << decodedText << std::endl << std::endl;
 
     // CAESAR //
-    std::cout << "CAESAR" << std::endl;
+    std::cout << ">> CAESAR" << std::endl << std::endl;
     Caesar caesar(3);
 
     // Chiffrement
@@ -32,10 +32,10 @@ int main() {
 
     // Déchiffrement
     std::string decodedCaesar = caesar.decode(caesar.read("caesar.txt"));
-    std::cout << "decrypt : " << decodedCaesar << std::endl;
+    std::cout << "decrypt : " << decodedCaesar << std::endl << std::endl;
 
     // CAESAR2 //
-    std::cout << "CAESAR2" << std::endl;
+    std::cout << ">> CAESAR2" << std::endl << std::endl;
     Caesar2 caesar2(3);
 
     // Lecture
@@ -59,15 +59,15 @@ int main() {
 
     // Déchiffrement
     std::string decodedCaesar2 = caesar2.decode(caesar2.read("caesar2.txt"));
-    std::cout << "decrypt : " << decodedCaesar2 << std::endl;
+    std::cout << "decrypt : " << decodedCaesar2 << std::endl << std::endl;
 
     // VIGENERE //
-    std::cout << "VIGENERE" << std::endl;
+    std::cout << ">> VIGENERE" << std::endl << std::endl;
     Vigenere vigenere("turing");
     std::string cipherVigenere = vigenere.encode(message);
     std::cout << "encrypt : " << cipherVigenere << std::endl;
     std::string decodedVigenere = vigenere.decode(cipherVigenere);
-    std::cout << "decrypt : " << decodedVigenere << std::endl;
+    std::cout << "decrypt : " << decodedVigenere << std::endl << std::endl;
 
     std::cout << "encrypt and decrypt success" << std::endl;
 

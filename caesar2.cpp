@@ -3,11 +3,10 @@
 
 Caesar2::Caesar2(int shift) : shift(shift) {}
 
-std::string Caesar2::encode(const std::string& plainText) const {
-    // prends en charge majuscule, minuscule, chiffre, espace, ponctuation
-    std::string result = plainText;
+std::string Caesar2::encode(const std::string& plain) {
+    _cipher = plain;
 
-    for (char& c : result) {
+    for (char& c : _cipher) {
         if (std::isprint(c)) {
             if (std::isalpha(c)) {
                 char base = (std::islower(c)) ? 'a' : 'A';
@@ -18,13 +17,13 @@ std::string Caesar2::encode(const std::string& plainText) const {
         }
     }
 
-    return result;
+    return _cipher;
 }
 
-std::string Caesar2::decode(const std::string& cipherText) const {
-    std::string result = cipherText;
+std::string Caesar2::decode(const std::string& cipher) {
+    _plain = cipher;
 
-    for (char& c : result) {
+    for (char& c : _plain) {
         if (std::isprint(c)) {
             if (std::isalpha(c)) {
                 char base = (std::islower(c)) ? 'a' : 'A';
@@ -35,13 +34,13 @@ std::string Caesar2::decode(const std::string& cipherText) const {
         }
     }
 
-    return result;
+    return _plain;
 }
 
-void Caesar2::write(const std::string& fileName, const std::string& message) const {
+void Caesar2::write(const std::string& fileName, const std::string& message) {
     Encrypt::write(fileName, message);
 }
 
-std::string Caesar2::read(const std::string& fileName) const {
+std::string Caesar2::read(const std::string& fileName) {
     return Encrypt::read(fileName);
 }

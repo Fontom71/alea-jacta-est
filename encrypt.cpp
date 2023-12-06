@@ -2,17 +2,17 @@
 #include <fstream>
 #include <iostream>
 
-std::string Encrypt::encode(const std::string & plainText)
+std::string Encrypt::encode(const std::string & plain)
 {
     return std::string();
 }
 
-std::string Encrypt::decode(const std::string & cipherText)
+std::string Encrypt::decode(const std::string & cipher)
 {
     return std::string();
 }
 
-void Encrypt::write(const std::string& fileName, const std::string& data) const {
+void Encrypt::write(const std::string& fileName, const std::string& data) {
     std::ofstream outputFile(fileName);
     if (outputFile.is_open()) {
         outputFile << data;
@@ -22,7 +22,7 @@ void Encrypt::write(const std::string& fileName, const std::string& data) const 
     }
 }
 
-std::string Encrypt::read(const std::string& fileName) const {
+std::string Encrypt::read(const std::string& fileName) {
     std::ifstream inputFile(fileName);
     std::string content;
     if (inputFile.is_open()) {

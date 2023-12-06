@@ -4,6 +4,6 @@
 class BasicEncrypt : public Encrypt {
 public:
     BasicEncrypt() : Encrypt() {}
-    std::string encode(const std::string& plainText);
-    std::string decode(const std::string& cipherText);
+    std::string encode(const std::string& plain);
+    std::string decode(const std::string& cipher);
 };

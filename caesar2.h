@@ -7,8 +7,8 @@ private:
 
 public:
     Caesar2(int shift);
-    std::string encode(const std::string& plainText) const;
-    std::string decode(const std::string& cipherText) const;
-    void write(const std::string& fileName, const std::string& message) const;
-    std::string read(const std::string& fileName) const;
+    std::string encode(const std::string& plain);
+    std::string decode(const std::string& cipher);
+    void write(const std::string& fileName, const std::string& message);
+    std::string read(const std::string& fileName);
 };

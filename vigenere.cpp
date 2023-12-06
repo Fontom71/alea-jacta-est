@@ -12,11 +12,11 @@ Vigenere::Vigenere(const std::string& keyString) {
     }
 }
 
-std::string Vigenere::encode(const std::string& plainText) const {
-    std::string result = plainText;
+std::string Vigenere::encode(const std::string& plain) {
+    _cipher = plain;
     size_t keyIndex = 0;
 
-    for (char& c : result) {
+    for (char& c : _cipher) {
         if (std::isalpha(c)) {
             char base = (std::islower(c)) ? 'a' : 'A';
             c = base + (c - base + key[keyIndex]) % 26;
@@ -24,14 +24,14 @@ std::string Vigenere::encode(const std::string& plainText) const {
         }
     }
 
-    return result;
+    return _cipher;
 }
 
-std::string Vigenere::decode(const std::string& cipherText) const {
-    std::string result = cipherText;
+std::string Vigenere::decode(const std::string& cipher) {
+    _plain = cipher;
     size_t keyIndex = 0;
 
-    for (char& c : result) {
+    for (char& c : _plain) {
         if (std::isalpha(c)) {
             char base = (std::islower(c)) ? 'a' : 'A';
             c = base + (c - base - key[keyIndex] + 26) % 26;
@@ -39,5 +39,5 @@ std::string Vigenere::decode(const std::string& cipherText) const {
         }
     }
 
-    return result;
+    return _plain;
 }

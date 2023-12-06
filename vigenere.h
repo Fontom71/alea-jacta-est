@@ -11,6 +11,6 @@ private:
 public:
     Vigenere(const std::vector<int>& key);
     Vigenere(const std::string& keyString);
-    std::string encode(const std::string& plainText) const;
-    std::string decode(const std::string& cipherText) const;
+    std::string encode(const std::string& plain);
+    std::string decode(const std::string& cipher);
 };

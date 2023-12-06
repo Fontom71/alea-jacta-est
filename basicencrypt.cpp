@@ -1,13 +1,13 @@
 #include "basicencrypt.h"
 
-std::string BasicEncrypt::encode(const std::string &plainText)
+std::string BasicEncrypt::encode(const std::string& plain)
 {
-    _cipher = plainText;
+    _cipher = plain;
     return _cipher;
 }
 
-std::string BasicEncrypt::decode(const std::string &cipherText)
+std::string BasicEncrypt::decode(const std::string& cipher)
 {
-    _plain = cipherText;
+    _plain = cipher;
     return _plain;
 }
