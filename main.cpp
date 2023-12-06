@@ -3,6 +3,7 @@
 #include "basicencrypt.h"
 #include "caesar.h"
 #include "caesar2.h"
+#include "vigenere.h"
 
 int main() {
     // BASICENCRYPT //
@@ -59,6 +60,14 @@ int main() {
     // Déchiffrement
     std::string decodedCaesar2 = caesar2.decode(caesar2.read("caesar2.txt"));
     std::cout << "decrypt : " << decodedCaesar2 << std::endl;
+
+    // VIGENERE //
+    std::cout << "VIGENERE" << std::endl;
+    Vigenere vigenere("turing");
+    std::string cipherVigenere = vigenere.encode(message);
+    std::cout << "encrypt : " << cipherVigenere << std::endl;
+    std::string decodedVigenere = vigenere.decode(cipherVigenere);
+    std::cout << "decrypt : " << decodedVigenere << std::endl;
 
     std::cout << "encrypt and decrypt success" << std::endl;
 
